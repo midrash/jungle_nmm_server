@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: # build의 다음 명령어에 대해 root를 현재 디렉토리로 설정한다.
+      context: /
+      dockerfile: Dockerfile
+    image: jungle_nmm:latest
+    ports:
+      - "3000:3000"
+    command:
+      - npm start
+    volumes:
+      - ./:/app/
